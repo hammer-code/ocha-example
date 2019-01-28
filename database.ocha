@@ -1,0 +1,24 @@
+database:
+  tables :
+    tb_master:
+      id_master:
+        type: serial
+        notNull: True
+        primaryKey: True
+      nm_master:
+        type: varchar
+        
+    tb_child:
+      id_child:
+        type: serial
+        notNull: True
+        primaryKey: True
+      id_master:
+        type: int
+        foreignKey:
+          reference: tb_master
+          field: id_master
+          on_delete: cascade
+          on_update: cascade
+      nm_child:
+        type: varchar

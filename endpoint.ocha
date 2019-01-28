@@ -1,0 +1,109 @@
+endpoint:
+  master:
+    auth: True
+    insert:
+      fields:
+        nm_master:
+          name: name search for domain
+          desc: Domain Variabel To Search
+          type: fields
+      others:
+        method:
+          name: name search for domain
+          desc: Domain Variabel To Search
+      moduls:
+        master:
+          action: insert
+          parameters:
+            table : tb_master
+            fields: $fields
+    remove:
+      fields:
+        id_master:
+          name: ID search
+          desc: Domain Variabel To Search
+          type: tags
+      others:
+        method:
+          name: methode name
+          desc: Domain Variabel To Search
+      moduls:
+        master:
+          action: remove
+          parameters:
+            table : tb_master
+            fields: $fields
+
+    get:
+      fields:
+        id_master:
+          name: ID search
+          desc: Domain Variabel To Search
+          type: tags
+          default:
+      others:
+        method:
+          name: methode name
+          desc: Domain Variabel To Search
+      moduls:
+        master:
+          action: get
+          parameters:
+            table : tb_master
+            fields: $fields
+  child:
+    auth: True
+    insert:
+      fields:
+        nm_child:
+          name: name search for domain
+          desc: Domain Variabel To Search
+          type: fields
+        id_master:
+          name: name search for domain
+          desc: Domain Variabel To Search
+          type: fields
+      others:
+        method:
+          name: name search for domain
+          desc: Domain Variabel To Search
+      moduls:
+        child:
+          action: insert
+          parameters:
+            table : tb_child
+            fields: $fields
+    remove:
+      fields:
+        id_child:
+          name: ID search
+          desc: Domain Variabel To Search
+          type: tags
+      others:
+        method:
+          name: methode name
+          desc: Domain Variabel To Search
+      moduls:
+        child:
+          action: remove
+          parameters:
+            table : tb_child
+            fields: $fields
+
+    get:
+      fields:
+        id_child:
+          name: ID search
+          desc: Domain Variabel To Search
+          type: tags
+          default:
+      others:
+        method:
+          name: methode name
+          desc: Domain Variabel To Search
+      moduls:
+        child:
+          action: get
+          parameters:
+            table : tb_child
+            fields: $fields
